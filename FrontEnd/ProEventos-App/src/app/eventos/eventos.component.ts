@@ -10,8 +10,10 @@ import { error } from 'console';
 export class EventosComponent implements OnInit {
 
   public eventos: any = [];
-  widthImg: number = 50;
-  marginImg: number = 2;
+  larguraImagem: number = 150;
+  margemImagem: number = 2;
+  mostrarImagem: boolean = true;
+  filtroLista: string = '';
 
 
 
@@ -19,6 +21,10 @@ export class EventosComponent implements OnInit {
 
   ngOnInit() {
     this.getEventos();
+  }
+
+  alterarImagem(){
+    this.mostrarImagem = !this.mostrarImagem;
   }
 
   public getEventos(): void{

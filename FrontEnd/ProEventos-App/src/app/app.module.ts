@@ -11,6 +11,7 @@ import { NavComponent } from './nav/nav.component';
 
 
 import { CollapseModule } from 'ngx-bootstrap/collapse';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { CollapseModule } from 'ngx-bootstrap/collapse';
     HttpClientModule,
     BrowserAnimationsModule,
     CollapseModule.forRoot(),
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
