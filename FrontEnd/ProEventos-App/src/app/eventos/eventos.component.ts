@@ -21,9 +21,9 @@ export class EventosComponent implements OnInit {
     return this._filtroLista;
   }
 
-  public set filtroLista(value){
+  public set filtroLista(value: string){
     this._filtroLista = value;
-    this.eventosFiltrados = this.filtroLista ? this.filtrarEventos(this.filtroLista) : this.filtroLista;
+    this.eventosFiltrados = this.filtroLista ? this.filtrarEventos(this.filtroLista) : this.eventos;
   }
 
   filtrarEventos(filtrarPor: string): any{
@@ -53,7 +53,7 @@ export class EventosComponent implements OnInit {
         this.eventos = response
         this.eventosFiltrados = this.eventos;
       },
-       error => console.log(error)
+      error => console.log(error)
     )
   }
 
