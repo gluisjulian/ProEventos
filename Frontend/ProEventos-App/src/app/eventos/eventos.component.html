@@ -1,9 +1,48 @@
-<h1>Eventos do component</h1>
+<h2>Eventos</h2>
+<hr>
 
-<div *ngFor="let evento of eventos">
+<form class="form-inline">
+  <div class="form-group mb-2 row">
+    <div class="col-auto">
+      <input type="text" class="form-control" placeholder="Buscar">
+    </div>
+    <div class="col-auto">
+      <button class="btn btn-outline-success">Buscar</button>
+    </div>
+  </div>
+</form>
 
-  <p>Tema: {{evento.tema}}</p>
-  <p>Local: {{evento.local}}</p>
-  <hr>
+<table class="table table-striped">
+  <thead class="table-dark">
+    <tr>
+      <th>#</th>
+      <th>Imagem</th>
+      <th>Tema</th>
+      <th>Local</th>
+      <th>Data</th>
+      <th>Qtde Pessoas</th>
+      <th>Lote</th>
+      <th>Opções</th>
+    </tr>
+  </thead>
+  <tbody *ngIf="eventos && eventos.length">
+    <tr *ngFor="let evento of eventos">
+        <td>{{evento.eventoId}}</td>
+        <td>{{evento.imagemURL}}</td>
+        <td>{{evento.tema}}</td>
+        <td>{{evento.local}}</td>
+        <td>{{evento.dataEvento}}</td>
+        <td>{{evento.qtdPessoas}}</td>
+        <td>{{evento.lote}}</td>
+        <td></td>
+      </tr>
+  </tbody>
+  <tfoot *ngIf="!eventos.length">
+    <tr>
+      <td colspan="8" class="text-center">
+        <h4>Nenhum evento encontrado</h4>
+      </td>
+    </tr>
+  </tfoot>
+</table>
 
-</div>
