@@ -3,11 +3,11 @@ using ProEventos.Persistence.Interface;
 
 namespace ProEventos.Persistence.Implementation
 {
-    public class IGeralPersistenceImplementation : IGeralPersistence
+    public class GeralPersistenceImplementation : IGeralPersistence
     {
         private readonly ProEventosContext _context;
         
-        public IGeralPersistenceImplementation(ProEventosContext context)
+        public GeralPersistenceImplementation(ProEventosContext context)
         {
             _context = context;
         }

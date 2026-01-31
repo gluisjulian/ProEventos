@@ -5,10 +5,10 @@ using ProEventos.Persistence.Interface;
 
 namespace ProEventos.Persistence.Implementation
 {
-    public class IEventosPersistenceImplementation : IEventosPersistence
+    public class EventoPersistenceImplementation : IEventoPersistence
     {
         private readonly ProEventosContext _context;
-        public IEventosPersistenceImplementation(ProEventosContext context)
+        public EventoPersistenceImplementation(ProEventosContext context)
         {
             _context = context;
         }

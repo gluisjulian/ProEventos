@@ -1,10 +1,24 @@
 using Microsoft.EntityFrameworkCore;
+using ProEventos.Application.Implementation;
+using ProEventos.Application.Interface;
 using ProEventos.Persistence.Context;
+using ProEventos.Persistence.Implementation;
+using ProEventos.Persistence.Interface;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddDbContext<ProEventosContext>(x => x.UseSqlServer(builder.Configuration.GetConnectionString("Default"), x => x.MigrationsAssembly("ProEventos.Persistence")));
+
+//APPLICATION
+builder.Services.AddScoped<IEventoService, EventoService>();
+
+
+//REPOSITORIO
+builder.Services.AddScoped<IEventoPersistence, EventoPersistenceImplementation>();
+builder.Services.AddScoped<IGeralPersistence, GeralPersistenceImplementation>();
+
+
 
 builder.Services.AddControllers();
 

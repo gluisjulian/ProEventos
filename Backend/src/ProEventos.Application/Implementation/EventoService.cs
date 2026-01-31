@@ -11,10 +11,10 @@ namespace ProEventos.Application.Implementation
 {
     public class EventoService : IEventoService
     {
-        private readonly IEventosPersistence _eventosPersistence;
+        private readonly IEventoPersistence _eventosPersistence;
         private readonly IGeralPersistence _geralPersistence;
 
-        public EventoService(IGeralPersistence geralPersistence, IEventosPersistence eventosPersistence)
+        public EventoService(IGeralPersistence geralPersistence, IEventoPersistence eventosPersistence)
         {
             _eventosPersistence = eventosPersistence;
             _geralPersistence = geralPersistence;
